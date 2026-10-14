@@ -4,9 +4,9 @@
 // SPDX-License-Identifier: Apache-2.0
 
 //! meta-contracts — API types for the Meta metasearch connector.
+use rust_decimal::Decimal;
 use serde::{Deserialize, Serialize};
 use uuid::Uuid;
-use rust_decimal::Decimal;
 
 #[derive(Debug, Clone, Serialize, Deserialize)]
 pub struct MetasearchChannel {
@@ -58,7 +58,8 @@ mod tests {
             is_active: true,
             created_at: chrono::Utc::now(),
         };
-        let back: MetasearchChannel = serde_json::from_value(serde_json::to_value(&c).unwrap()).unwrap();
+        let back: MetasearchChannel =
+            serde_json::from_value(serde_json::to_value(&c).unwrap()).unwrap();
         assert_eq!(back.channel_code, "GOOGLE");
         assert!(back.is_active);
     }
@@ -73,7 +74,8 @@ mod tests {
             rate_amount: Decimal::new(199_99, 2),
             currency_code: "EUR".into(),
         };
-        let back: RateAdvertisement = serde_json::from_value(serde_json::to_value(&r).unwrap()).unwrap();
+        let back: RateAdvertisement =
+            serde_json::from_value(serde_json::to_value(&r).unwrap()).unwrap();
         assert_eq!(back.rate_amount, Decimal::new(199_99, 2));
         assert_eq!(back.date.to_string(), "2026-09-10");
     }

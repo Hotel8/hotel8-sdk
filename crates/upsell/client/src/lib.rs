@@ -25,6 +25,11 @@ impl UpsellClient {
     }
 
     pub async fn health(&self) -> Result<serde_json::Value, reqwest::Error> {
-        self.http.get(self.url("/v1/health")).send().await?.json().await
+        self.http
+            .get(self.url("/v1/health"))
+            .send()
+            .await?
+            .json()
+            .await
     }
 }

@@ -786,7 +786,11 @@ mod tests {
             (FrontOfficeStatus::Departed, "DEPARTED"),
             (FrontOfficeStatus::Stayover, "STAYOVER"),
         ] {
-            assert_eq!(serde_json::to_value(variant).unwrap(), label, "wire: {label}");
+            assert_eq!(
+                serde_json::to_value(variant).unwrap(),
+                label,
+                "wire: {label}"
+            );
             assert_eq!(variant.to_string(), label, "display: {label}");
             assert_eq!(
                 serde_json::from_value::<FrontOfficeStatus>(label.into()).unwrap(),
@@ -806,7 +810,11 @@ mod tests {
             (HousekeepingStatus::OutOfOrder, "OUT_OF_ORDER"),
             (HousekeepingStatus::OutOfService, "OUT_OF_SERVICE"),
         ] {
-            assert_eq!(serde_json::to_value(variant).unwrap(), label, "wire: {label}");
+            assert_eq!(
+                serde_json::to_value(variant).unwrap(),
+                label,
+                "wire: {label}"
+            );
             assert_eq!(variant.to_string(), label, "display: {label}");
             assert_eq!(
                 serde_json::from_value::<HousekeepingStatus>(label.into()).unwrap(),
@@ -818,10 +826,7 @@ mod tests {
     /// Folio / Block / Event / VIP / ProfileType wire formats.
     #[test]
     fn remaining_status_wire_formats() {
-        assert_eq!(
-            serde_json::to_value(FolioStatus::Open).unwrap(),
-            "OPEN"
-        );
+        assert_eq!(serde_json::to_value(FolioStatus::Open).unwrap(), "OPEN");
         assert_eq!(
             serde_json::to_value(FolioStatus::Settled).unwrap(),
             "SETTLED"
@@ -834,10 +839,7 @@ mod tests {
             serde_json::to_value(EventStatus::Tentative).unwrap(),
             "TENTATIVE"
         );
-        assert_eq!(
-            serde_json::to_value(VipStatus::Vvip).unwrap(),
-            "VVIP"
-        );
+        assert_eq!(serde_json::to_value(VipStatus::Vvip).unwrap(), "VVIP");
         assert_eq!(
             serde_json::to_value(ProfileType::TravelAgent).unwrap(),
             "TRAVEL_AGENT"
@@ -1018,8 +1020,13 @@ mod tests {
             posted_at: chrono::Utc::now(),
             posted_by: None,
         };
-        let back: FolioCharge = serde_json::from_value(serde_json::to_value(&charge).unwrap()).unwrap();
-        assert_eq!(back.amount, Decimal::new(1, 2), "no float truncation on 0.01");
+        let back: FolioCharge =
+            serde_json::from_value(serde_json::to_value(&charge).unwrap()).unwrap();
+        assert_eq!(
+            back.amount,
+            Decimal::new(1, 2),
+            "no float truncation on 0.01"
+        );
         assert_eq!(back.transaction_code, "ROOM");
     }
 
@@ -1155,7 +1162,8 @@ mod tests {
             version: "0.1.0".into(),
             build: "deadbeef".into(),
         };
-        let back: HealthResponse = serde_json::from_value(serde_json::to_value(&h).unwrap()).unwrap();
+        let back: HealthResponse =
+            serde_json::from_value(serde_json::to_value(&h).unwrap()).unwrap();
         assert_eq!(back.build, "deadbeef");
     }
 }

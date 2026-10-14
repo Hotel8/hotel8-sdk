@@ -4,9 +4,9 @@
 // SPDX-License-Identifier: Apache-2.0
 
 //! upsell-contracts — API types for the Upsell upsell engine.
+use rust_decimal::Decimal;
 use serde::{Deserialize, Serialize};
 use uuid::Uuid;
-use rust_decimal::Decimal;
 
 #[derive(Debug, Clone, Serialize, Deserialize)]
 pub struct Offer {

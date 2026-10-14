@@ -4,9 +4,9 @@
 // SPDX-License-Identifier: Apache-2.0
 
 //! pos-client — HTTP client for the H8POS point-of-sale service.
-use std::sync::Arc;
+use hotel8_pos_contracts::{Order, OrderCreate};
 use sentin8::middleware::http_client::Sentin8HttpClient;
-use hotel8_pos_contracts::{OrderCreate, Order};
+use std::sync::Arc;
 use thiserror::Error;
 
 #[derive(Debug, Error)]
@@ -38,21 +38,33 @@ impl POSClient {
     }
 
     pub async fn health(&self) -> Result<serde_json::Value, POSError> {
-        let resp = self.http.get(self.url("/v1/health"))
-            .send().await
+        let resp = self
+            .http
+            .get(self.url("/v1/health"))
+            .send()
+            .await
             .map_err(|e| POSError::Http(e.to_string()))?;
-        resp.json::<serde_json::Value>().await
+        resp.json::<serde_json::Value>()
+            .await
             .map_err(|e| POSError::Decode(e.to_string()))
     }
 
-    pub async fn create_order(&self, outlet_id: uuid::Uuid, req: &OrderCreate) -> Result<Order, POSError> {
+    pub async fn create_order(
+        &self,
+        outlet_id: uuid::Uuid,
+        req: &OrderCreate,
+    ) -> Result<Order, POSError> {
         let path = format!("/v1/outlets/{outlet_id}/orders");
-        let resp = self.http.post(self.url(&path))
+        let resp = self
+            .http
+            .post(self.url(&path))
             .header("Authorization", format!("Bearer {}", self.auth_token))
             .json(req)
-            .send().await
+            .send()
+            .await
             .map_err(|e| POSError::Http(e.to_string()))?;
-        resp.json::<Order>().await
+        resp.json::<Order>()
+            .await
             .map_err(|e| POSError::Decode(e.to_string()))
     }
 }

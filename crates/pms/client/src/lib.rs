@@ -18,8 +18,8 @@
 //! * **Static bearer** ([`H8pmsClient::new`]) — user/delegated JWT flows
 //!   where the caller already holds a token (BFF-adjacent callers).
 
-use std::sync::Arc;
 use sentin8::middleware::http_client::Sentin8HttpClient;
+use std::sync::Arc;
 use thiserror::Error;
 use uuid::Uuid;
 
@@ -132,7 +132,11 @@ impl H8pmsClient {
             .map_err(|e| H8pmsError::Decode(e.to_string()))
     }
 
-    async fn post_json(&self, path: &str, body: &serde_json::Value) -> Result<serde_json::Value, H8pmsError> {
+    async fn post_json(
+        &self,
+        path: &str,
+        body: &serde_json::Value,
+    ) -> Result<serde_json::Value, H8pmsError> {
         let mut req = self.http.post(self.url(path));
         if let Some(headers) = self.auth_headers()? {
             req = req.headers(headers);
@@ -150,7 +154,11 @@ impl H8pmsClient {
             .map_err(|e| H8pmsError::Decode(e.to_string()))
     }
 
-    async fn put_json(&self, path: &str, body: &serde_json::Value) -> Result<serde_json::Value, H8pmsError> {
+    async fn put_json(
+        &self,
+        path: &str,
+        body: &serde_json::Value,
+    ) -> Result<serde_json::Value, H8pmsError> {
         let mut req = self.http.put(self.url(path));
         if let Some(headers) = self.auth_headers()? {
             req = req.headers(headers);
@@ -247,9 +255,7 @@ impl H8pmsClient {
         profile_id: Uuid,
         loyalty_number: &str,
     ) -> Result<serde_json::Value, H8pmsError> {
-        let path = format!(
-            "/v1/properties/{property_id}/profiles/{profile_id}/loyalty-number"
-        );
+        let path = format!("/v1/properties/{property_id}/profiles/{profile_id}/loyalty-number");
         let body = serde_json::json!({ "loyalty_number": loyalty_number });
         self.put_json(&path, &body).await
     }

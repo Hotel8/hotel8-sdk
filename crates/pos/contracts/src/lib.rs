@@ -8,9 +8,9 @@
 //! Covers outlets, menus, orders, payments, and kitchen display system integration.
 //! See `hotel8/design/sentin8-hotel8-pos-technical-design.md` for the full design.
 
+use rust_decimal::Decimal;
 use serde::{Deserialize, Serialize};
 use uuid::Uuid;
-use rust_decimal::Decimal;
 
 // ── Outlets ──
 
@@ -206,8 +206,12 @@ mod tests {
 
     #[test]
     fn health_response_round_trip() {
-        let h = HealthResponse { status: "ok".into(), service: "pos".into() };
-        let back: HealthResponse = serde_json::from_value(serde_json::to_value(&h).unwrap()).unwrap();
+        let h = HealthResponse {
+            status: "ok".into(),
+            service: "pos".into(),
+        };
+        let back: HealthResponse =
+            serde_json::from_value(serde_json::to_value(&h).unwrap()).unwrap();
         assert_eq!(back.service, "pos");
     }
 }

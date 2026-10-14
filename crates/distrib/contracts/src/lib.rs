@@ -4,9 +4,9 @@
 // SPDX-License-Identifier: Apache-2.0
 
 //! distribution-contracts — API types for the Distrib distribution service.
+use rust_decimal::Decimal;
 use serde::{Deserialize, Serialize};
 use uuid::Uuid;
-use rust_decimal::Decimal;
 
 #[derive(Debug, Clone, Serialize, Deserialize)]
 pub struct Channel {
@@ -87,7 +87,8 @@ mod tests {
             end_date: chrono::NaiveDate::from_ymd_opt(2026, 9, 30).unwrap(),
             rate_amount: Decimal::new(175_00, 2),
         };
-        let back: ChannelRateUpdate = serde_json::from_value(serde_json::to_value(&u).unwrap()).unwrap();
+        let back: ChannelRateUpdate =
+            serde_json::from_value(serde_json::to_value(&u).unwrap()).unwrap();
         assert_eq!(back.rate_amount, Decimal::new(175_00, 2));
         assert_eq!(back.end_date.to_string(), "2026-09-30");
     }
