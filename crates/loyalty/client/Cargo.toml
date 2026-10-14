@@ -1,0 +1,20 @@
+# SPDX-FileCopyrightText: Copyright Logically Magic Inc. <hello@logicallymagic.com>
+# SPDX-FileCopyrightText: Copyright Hamid Jahanzad <Hamid@Jahanzad.com>
+# SPDX-FileCopyrightText: Copyright Contributors to the Hotel8:SDK
+# SPDX-License-Identifier: Apache-2.0
+
+[package]
+name = "hotel8-loyalty-client"
+version = "0.1.0"
+edition.workspace = true
+license.workspace = true
+
+[dependencies]
+sentin8.workspace = true
+reqwest = { workspace = true }
+serde = { workspace = true }
+serde_json = { workspace = true }
+thiserror = { workspace = true }
+tracing = { workspace = true }
+uuid = { workspace = true }
+hotel8-loyalty-contracts = { workspace = true }

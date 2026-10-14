@@ -1,0 +1,25 @@
+# SPDX-FileCopyrightText: Copyright Logically Magic Inc. <hello@logicallymagic.com>
+# SPDX-FileCopyrightText: Copyright Hamid Jahanzad <Hamid@Jahanzad.com>
+# SPDX-FileCopyrightText: Copyright Contributors to the Hotel8:SDK
+# SPDX-License-Identifier: Apache-2.0
+
+[package]
+name = "hotel8"
+version = "0.1.0"
+edition = "2021"
+license = "UNLICENSED"
+description = "Hotel8 namespace facade — every hotel8 crate imports as hotel8::{svc}::{kind} (architecture-principles §2.1)."
+
+[dependencies]
+hotel8-pms-client.workspace = true
+hotel8-pms-contracts.workspace = true
+hotel8-pos-client.workspace = true
+hotel8-pos-contracts.workspace = true
+hotel8-distrib-client.workspace = true
+hotel8-distrib-contracts.workspace = true
+hotel8-loyalty-client.workspace = true
+hotel8-loyalty-contracts.workspace = true
+hotel8-meta-client.workspace = true
+hotel8-meta-contracts.workspace = true
+hotel8-upsell-client.workspace = true
+hotel8-upsell-contracts.workspace = true
