@@ -3,7 +3,7 @@
 // SPDX-FileCopyrightText: Copyright Contributors to the Hotel8:SDK
 // SPDX-License-Identifier: Apache-2.0
 
-//! pos-client — HTTP client for the H8POS point-of-sale service.
+//! pos-client - HTTP client for the H8POS point-of-sale service.
 use hotel8_pos_contracts::{Order, OrderCreate};
 use sentin8::middleware::http_client::Sentin8HttpClient;
 use std::sync::Arc;

@@ -8,7 +8,7 @@ name = "hotel8"
 version = "0.1.0"
 edition = "2021"
 license = "UNLICENSED"
-description = "Hotel8 namespace facade — every hotel8 crate imports as hotel8::{svc}::{kind} (architecture-principles §2.1)."
+description = "Hotel8 namespace facade - every hotel8 crate imports as hotel8::{svc}::{kind} (architecture-principles §2.1)."
 
 [dependencies]
 hotel8-pms-client.workspace = true

@@ -3,7 +3,7 @@
 // SPDX-FileCopyrightText: Copyright Contributors to the Hotel8:SDK
 // SPDX-License-Identifier: Apache-2.0
 
-//! meta-client — HTTP client for the Meta metasearch connector.
+//! meta-client - HTTP client for the Meta metasearch connector.
 use sentin8::middleware::http_client::Sentin8HttpClient;
 
 #[derive(Clone)]

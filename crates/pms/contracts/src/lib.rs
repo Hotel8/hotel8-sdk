@@ -722,7 +722,7 @@ pub struct HealthResponse {
 }
 
 // ═══════════════════════════════════════════════════════════════════════════
-// Tests — contract round-trips + wire format (H8T-2)
+// Tests - contract round-trips + wire format (H8T-2)
 //
 // These tests pin the JSON wire format of every status enum to the exact
 // `CREATE TYPE hotel8.pms_* AS ENUM (...)` labels in services/pms/sql/init.sql
@@ -1015,7 +1015,7 @@ mod tests {
             id: Uuid::new_v4(),
             transaction_code: "ROOM".into(),
             description: "Night 1".into(),
-            amount: Decimal::new(1, 2), // 0.01 — the smallest cent
+            amount: Decimal::new(1, 2), // 0.01 - the smallest cent
             quantity: 1,
             posted_at: chrono::Utc::now(),
             posted_by: None,

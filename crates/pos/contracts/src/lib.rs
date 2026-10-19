@@ -3,7 +3,7 @@
 // SPDX-FileCopyrightText: Copyright Contributors to the Hotel8:SDK
 // SPDX-License-Identifier: Apache-2.0
 
-//! pos-contracts — API types for the H8POS point-of-sale service.
+//! pos-contracts - API types for the H8POS point-of-sale service.
 //!
 //! Covers outlets, menus, orders, payments, and kitchen display system integration.
 //! See `hotel8/design/sentin8-hotel8-pos-technical-design.md` for the full design.
@@ -105,7 +105,7 @@ pub struct HealthResponse {
     pub service: String,
 }
 // ═══════════════════════════════════════════════════════════════════════════
-// Tests — contract round-trips (H8T-6)
+// Tests - contract round-trips (H8T-6)
 // ═══════════════════════════════════════════════════════════════════════════
 
 #[cfg(test)]

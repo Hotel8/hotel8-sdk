@@ -3,7 +3,7 @@
 // SPDX-FileCopyrightText: Copyright Contributors to the Hotel8:SDK
 // SPDX-License-Identifier: Apache-2.0
 
-//! meta-contracts — API types for the Meta metasearch connector.
+//! meta-contracts - API types for the Meta metasearch connector.
 use rust_decimal::Decimal;
 use serde::{Deserialize, Serialize};
 use uuid::Uuid;
@@ -40,7 +40,7 @@ pub struct HealthResponse {
     pub service: String,
 }
 // ═══════════════════════════════════════════════════════════════════════════
-// Tests — contract round-trips (H8T-6)
+// Tests - contract round-trips (H8T-6)
 // ═══════════════════════════════════════════════════════════════════════════
 
 #[cfg(test)]

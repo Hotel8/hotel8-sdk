@@ -3,7 +3,7 @@
 // SPDX-FileCopyrightText: Copyright Contributors to the Hotel8:SDK
 // SPDX-License-Identifier: Apache-2.0
 
-//! upsell-contracts — API types for the Upsell upsell engine.
+//! upsell-contracts - API types for the Upsell upsell engine.
 use rust_decimal::Decimal;
 use serde::{Deserialize, Serialize};
 use uuid::Uuid;
@@ -47,7 +47,7 @@ pub struct HealthResponse {
     pub service: String,
 }
 // ═══════════════════════════════════════════════════════════════════════════
-// Tests — contract round-trips (H8T-6)
+// Tests - contract round-trips (H8T-6)
 // ═══════════════════════════════════════════════════════════════════════════
 
 #[cfg(test)]

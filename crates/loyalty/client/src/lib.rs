@@ -3,7 +3,7 @@
 // SPDX-FileCopyrightText: Copyright Contributors to the Hotel8:SDK
 // SPDX-License-Identifier: Apache-2.0
 
-//! loyalty-client — HTTP client for the Loyalty loyalty program service.
+//! loyalty-client - HTTP client for the Loyalty loyalty program service.
 use sentin8::middleware::http_client::Sentin8HttpClient;
 
 #[derive(Clone)]

@@ -9,13 +9,13 @@
 //!
 //! Two identity modes (CERTFREE-4V):
 //!
-//! * **Workload certificate** ([`H8pmsClient::with_workload_certificate`]) —
+//! * **Workload certificate** ([`H8pmsClient::with_workload_certificate`]) -
 //!   the standard service-to-service path: the CALLING service presents its
 //!   own Acme-issued workload certificate (`m2m-{workload}` CN) in the TLS
 //!   handshake; PMS's TLS layer authenticates it and the enroll-published
 //!   registry map authorizes the scopes. No bearer token exists on this
 //!   path.
-//! * **Static bearer** ([`H8pmsClient::new`]) — user/delegated JWT flows
+//! * **Static bearer** ([`H8pmsClient::new`]) - user/delegated JWT flows
 //!   where the caller already holds a token (BFF-adjacent callers).
 
 use sentin8::middleware::http_client::Sentin8HttpClient;
@@ -34,7 +34,7 @@ pub enum H8pmsError {
 #[derive(Clone)]
 pub struct H8pmsClient {
     base_url: String,
-    /// Static bearer token (empty on the certificate path — no
+    /// Static bearer token (empty on the certificate path - no
     /// Authorization header is sent when it is empty).
     auth_token: Arc<String>,
     /// The presenting transport: a certificate-configured client on the
@@ -44,7 +44,7 @@ pub struct H8pmsClient {
 
 impl H8pmsClient {
     /// Build a client that authenticates every call with a static bearer
-    /// token — for user/delegated JWT flows where the caller already holds
+    /// token - for user/delegated JWT flows where the caller already holds
     /// a token.
     pub fn new(base_url: impl Into<String>, auth_token: impl Into<String>) -> Self {
         Self {
@@ -58,11 +58,11 @@ impl H8pmsClient {
     /// (CERTFREE-4V): mint-or-load the CALLING service's own
     /// `m2m-{workload}` Acme certificate and wrap it in the mTLS
     /// transport. PMS's TLS layer authenticates the handshake and the
-    /// enroll-published registry map authorizes the scopes — no bearer
+    /// enroll-published registry map authorizes the scopes - no bearer
     /// token exists on this path.
     ///
     /// `workload` is the CALLING service's registered workload name
-    /// (e.g. `"upsell"`, `"loyalty"`) — it must appear in the calling
+    /// (e.g. `"upsell"`, `"loyalty"`) - it must appear in the calling
     /// service's `M2M_GRANTS` declaration so `vertical enroll` publishes
     /// its registry-map row.
     ///
@@ -99,7 +99,7 @@ impl H8pmsClient {
         format!("{}{}", self.base_url, path)
     }
 
-    /// The Authorization header for the request — `None` on the
+    /// The Authorization header for the request - `None` on the
     /// certificate path (the TLS handshake IS the authentication; an
     /// empty static token means no header) and on token-less flows.
     fn auth_headers(&self) -> Result<Option<reqwest::header::HeaderMap>, H8pmsError> {
@@ -196,7 +196,7 @@ impl H8pmsClient {
         self.post_json(&path, &serde_json::json!({})).await
     }
 
-    /// POST /v1/properties/{property_id}/reservations/{id}/upsell —
+    /// POST /v1/properties/{property_id}/reservations/{id}/upsell -
     /// PMS-side room-type/rate-plan modification for an accepted upsell.
     pub async fn modify_reservation(
         &self,

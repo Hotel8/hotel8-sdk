@@ -1,10 +1,10 @@
-# hotel8-sdk — Hotel8 Namespace Facade
+# hotel8-sdk - Hotel8 Namespace Facade
 
 ## 1. Summary
 
 The Hotel8 vertical's SDK workspace: one cargo workspace holding the
 six hotel services' client + contracts crates and the `hotel8`
-facade crate. Imports go through the facade —
+facade crate. Imports go through the facade -
 `use hotel8::pms::client::…` (namespace rule, architecture-principles
 §2.1).
 
@@ -22,7 +22,7 @@ facade crate. Imports go through the facade —
 hotel8 = { git = "https://github.com/Hotel8/hotel8-sdk", tag = "hotel8-v0.1.0" }
 ```
 
-The facade pins the platform SDK (`sentin8` — shared plane only,
+The facade pins the platform SDK (`sentin8` - shared plane only,
 SDD §2.2); consumers inherit it transitively.
 
 ---

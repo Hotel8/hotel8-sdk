@@ -3,7 +3,7 @@
 // SPDX-FileCopyrightText: Copyright Contributors to the Hotel8:SDK
 // SPDX-License-Identifier: Apache-2.0
 
-//! upsell-client — HTTP client for the Upsell upsell engine.
+//! upsell-client - HTTP client for the Upsell upsell engine.
 use sentin8::middleware::http_client::Sentin8HttpClient;
 
 #[derive(Clone)]

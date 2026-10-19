@@ -3,7 +3,7 @@
 // SPDX-FileCopyrightText: Copyright Contributors to the Hotel8:SDK
 // SPDX-License-Identifier: Apache-2.0
 
-//! loyalty-contracts — API types for the Loyalty loyalty program service.
+//! loyalty-contracts - API types for the Loyalty loyalty program service.
 use serde::{Deserialize, Serialize};
 use uuid::Uuid;
 
@@ -78,7 +78,7 @@ pub struct HealthResponse {
     pub service: String,
 }
 // ═══════════════════════════════════════════════════════════════════════════
-// Tests — contract round-trips (H8T-6)
+// Tests - contract round-trips (H8T-6)
 // ═══════════════════════════════════════════════════════════════════════════
 
 #[cfg(test)]

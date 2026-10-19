@@ -3,7 +3,7 @@
 // SPDX-FileCopyrightText: Copyright Contributors to the Hotel8:SDK
 // SPDX-License-Identifier: Apache-2.0
 
-//! # hotel8 — Hotel8 workspace namespace facade
+//! # hotel8 - Hotel8 workspace namespace facade
 //!
 //! Every hotel8 crate is named `hotel8::{leaf}` and is imported through this
 //! facade; service-scoped crates nest under their service module. See
