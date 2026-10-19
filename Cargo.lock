@@ -1983,6 +1983,7 @@ dependencies = [
  "rust_decimal",
  "serde",
  "serde_json",
+ "utoipa",
  "uuid",
 ]
 
@@ -2008,6 +2009,7 @@ dependencies = [
  "rust_decimal",
  "serde",
  "serde_json",
+ "utoipa",
  "uuid",
 ]
 
@@ -2033,6 +2035,7 @@ dependencies = [
  "rust_decimal",
  "serde",
  "serde_json",
+ "utoipa",
  "uuid",
 ]
 
@@ -2084,6 +2087,7 @@ dependencies = [
  "rust_decimal",
  "serde",
  "serde_json",
+ "utoipa",
  "uuid",
 ]
 
@@ -2109,6 +2113,7 @@ dependencies = [
  "rust_decimal",
  "serde",
  "serde_json",
+ "utoipa",
  "uuid",
 ]
 
