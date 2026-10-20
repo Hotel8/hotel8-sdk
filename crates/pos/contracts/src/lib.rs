@@ -115,7 +115,6 @@ fn default_one() -> i32 {
     1
 }
 
-
 fn default_cash_ptype() -> String {
     "CASH".into()
 }
