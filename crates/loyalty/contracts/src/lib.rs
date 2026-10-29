@@ -112,7 +112,7 @@ fn default_inactive_months() -> i32 {
     24
 }
 
-// Wire shapes (OAPEC-9): the admin/member API rows the handlers return. The
+// Wire shapes : the admin/member API rows the handlers return. The
 // legacy Program/Member/PointsTransaction structs above are the client-engine
 // contracts; these pin the wire rows. Tier benefits stay free-form JSONB.
 

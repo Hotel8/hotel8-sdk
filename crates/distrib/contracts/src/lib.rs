@@ -65,7 +65,7 @@ fn default_modified() -> String {
 }
 
 // ════════════════════════════════════════════════════════════════════════
-// Wire shapes (OAPEC-9): the admin/channel API rows the handlers return.
+// Wire shapes : the admin/channel API rows the handlers return.
 // The legacy Channel/ChannelCreate structs above are the client-engine
 // contracts; these pin the wire rows (NUMERIC via `::text` as String).
 // ═══════════════════════════════════════════════════════════════════════════

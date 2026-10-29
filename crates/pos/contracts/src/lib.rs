@@ -126,7 +126,7 @@ fn default_today() -> String {
 // declared at the file bottom next to their sibling defaults)
 
 // ═══════════════════════════════════════════════════════════════════════════
-// Wire shapes (OAPEC-9): the admin/guest API rows the handlers return.
+// Wire shapes : the admin/guest API rows the handlers return.
 // Legacy Outlet/MenuItem structs above are the client-engine contracts;
 // these pin the wire rows (NUMERIC via `::text` as String). ToSchema on every
 // member so `docs/openapi.json` response schemas are real.
