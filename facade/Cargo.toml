@@ -5,7 +5,7 @@
 
 [package]
 name = "hotel8"
-version = "0.1.0"
+version = "1.0.0"
 edition = "2021"
 license = "UNLICENSED"
 description = "Hotel8 namespace facade - every hotel8 crate imports as hotel8::{svc}::{kind} (architecture-principles §2.1)."
